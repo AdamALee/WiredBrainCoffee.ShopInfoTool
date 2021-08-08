@@ -36,8 +36,8 @@ namespace WiredBrainCoffee.ShopInfoTool
                 }
                 else
                 {
-                    var foundCoffeeShops = coffeeShops
-                        .Where(x => x.Location.StartsWith(line, StringComparison.OrdinalIgnoreCase)).ToList();
+                    var commandHandler = new CoffeeShopCommandHandler(coffeeShops, line);
+                    commandHandler.HandleCommand();
                 }
             }
         }
